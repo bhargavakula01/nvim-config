@@ -1,2 +1,1 @@
 require("bhargav")
-print('hello')
