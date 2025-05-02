@@ -39,7 +39,39 @@ return require('packer').startup(function(use)
             require'alpha'.setup(require'alpha.themes.dashboard'.config)
         end
     }
+    use {'datwaft/bubbly.nvim', config = function()
+        -- Here you can add the configuration for the plugin
+        vim.g.bubbly_palette = {
+            background = "#34343c",
+            foreground = "#c5cdd9",
+            black = "#3e4249",
+            red = "#ec7279",
+            green = "#a0c980",
+            yellow = "#deb974",
+            blue = "#6cb6eb",
+            purple = "#d38aea",
+            cyan = "#5dbbc1",
+            white = "#c5cdd9",
+            lightgrey = "#57595e",
+            darkgrey = "#404247",
+        }
+        vim.g.bubbly_statusline = {
+            'mode',
 
+            'truncate',
+
+            'path',
+            'branch',
+            'signify',
+            'gitsigns',
+            'coc',
+
+            'divisor',
+
+            'filetype',
+            'progress',
+        }
+    end}
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground', {run = ':TSUpdate'})
@@ -64,5 +96,8 @@ return require('packer').startup(function(use)
     use("rcarriga/nvim-dap-ui")
     use("mfussenegger/nvim-dap-python")
     use("theHamsta/nvim-dap-virtual-text")
-
+    -- showing tabs and git status
+    use ('nvim-tree/nvim-web-devicons') -- OPTIONAL: for file icons
+    use ('lewis6991/gitsigns.nvim') -- OPTIONAL: for git status
+    use ('romgrk/barbar.nvim')
 end)
