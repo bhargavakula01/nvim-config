@@ -48,8 +48,13 @@ return require('packer').startup(function(use)
         -- some optional icons
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     })
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use("nvim-telescope/telescope-project.nvim")
     use('nvim-treesitter/playground', {run = ':TSUpdate'})
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
