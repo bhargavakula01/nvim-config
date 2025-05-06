@@ -52,6 +52,20 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = "*", -- or a specific version like "v2.*"
+        config = function()
+            require("toggleterm").setup {
+                -- optional settings
+                direction = "float",
+                float_opts = {
+                    border = "curved",
+                },
+                -- other options like open_mapping, shell, etc.
+            }
+        end
+    }
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use("nvim-telescope/telescope-project.nvim")
