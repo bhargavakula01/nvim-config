@@ -3,7 +3,6 @@ require("mason").setup({})
 require("mason-lspconfig").setup({
   ensure_installed = {
     "rust_analyzer",  -- Rust
-    "julia-lsp",      -- Julia
     "pyright",        -- Python
     "clangd",         -- C/C++
     "texlab",         -- LaTeX
