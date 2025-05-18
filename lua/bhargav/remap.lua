@@ -6,7 +6,11 @@ vim.api.nvim_set_keymap('n', 'b', 'N', { noremap = true, silent = true })
 vim.keymap.set("n", "~", "$", { noremap = true, silent = true })
 -- Bind '2' to move to first non-whitespace character (^)
 vim.keymap.set("n", "`", "^", { noremap = true, silent = true })
-
+-- Adding quotes, brackets, or paranthesis around things highlighted
+vim.keymap.set("x", "<leader>(", 'c(<C-r>")<C-r><Esc>', { noremap = true, silent = true })
+vim.keymap.set("x", "<leader>[", 'c[<C-r>"]<C-r><Esc>', { noremap = true, silent = true })
+vim.keymap.set("x", '<leader>"', 'c"<C-r>""<C-r><Esc>', { noremap = true, silent = true })
+vim.keymap.set("x", "<leader>'", "c'<C-r>\"'<C-r><Esc>", { noremap = true, silent = true })
 -- Remaps that came from 'theprimeagen' youtube video: https://www.youtube.com/watch?v=w7i4amO_zaE&t=244s
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
