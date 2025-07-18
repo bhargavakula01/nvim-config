@@ -14,14 +14,23 @@ return require('packer').startup(function(use)
     }
 
     -- rose-pine.lua (colorscheme)
+    -- use {
+    --     "rose-pine/neovim",
+    --     name = "rose-pine",
+    --     config = function()
+    --         vim.cmd("colorscheme rose-pine")
+    --
+    --     end
+    -- }
     use {
-        "rose-pine/neovim",
-        name = "rose-pine",
+        "catppuccin/nvim",
+        name = "catppuccin",
         config = function()
-            vim.cmd("colorscheme rose-pine")
+            vim.cmd("colorscheme catppuccin")
 
         end
     }
+
 
     -- nvim v0.7.2
     use({
