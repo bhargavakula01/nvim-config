@@ -13,9 +13,10 @@ require("mason-lspconfig").setup({
 })
 
 -- Setup handlers for each language server
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
 local default_handler = function(server_name)
-  lspconfig[server_name].setup({})
+  -- lspconfig[server_name].setup({})
+  vim.lsp.enable(server_name)
 end
 
 require("mason-lspconfig").setup_handlers({
