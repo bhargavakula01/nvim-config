@@ -75,9 +75,14 @@ return require('packer').startup(function(use)
             }
         end
     }
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,}
+    -- use("nvim-treesitter/playground")
     use("nvim-telescope/telescope-project.nvim")
-    use('nvim-treesitter/playground', {run = ':TSUpdate'})
     use('ThePrimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
