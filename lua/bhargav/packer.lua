@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    -- rose-pine.lua (colorscheme)
+    -- rose-pine.lua (colorscheme) asdasds
     -- use {
     --     "rose-pine/neovim",
     --     name = "rose-pine",
